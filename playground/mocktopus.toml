@@ -1,0 +1,15 @@
+healthChecks = false
+logging = true
+logLevel = "info"
+host = "https://github.com"
+
+[server]
+port = 8080
+
+[ports]
+automatic = true
+options = [80, 4410, 90]
+
+[repos]
+autoUpdate = true
+location = "./repos"

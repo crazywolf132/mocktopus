@@ -1,0 +1,32 @@
+[[routes]]
+path = "/api/users"
+method = "GET"
+
+[[routes.conditions]]
+state.authToken = "validToken"
+
+[routes.response]
+status = 200
+headers.Content-Type = "application/json"
+body = """
+  [
+    {"id": 1, "name": "John Doe"},
+    {"id": 2, "name": "Jane Smith"}
+  ]
+  """
+
+[[routes]]
+path = "/api/users"
+method = "POST"
+
+[routes.request]
+body = """
+  {"name": "New User"}
+  """
+
+[routes.response]
+status = 201
+headers.Content-Type = "application/json"
+body = """
+  {"id": 3, "name": "New User"}
+  """
